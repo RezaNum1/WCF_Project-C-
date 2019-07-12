@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Nilai" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:23109/Nilai.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:23109/Nilai.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:23109/Nilai.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServerWCF" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INilai_getNilai_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNilai" />
+  </wsdl:message>
+  <wsdl:message name="INilai_getNilai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNilaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="INilai_getNilaiByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNilaiByID" />
+  </wsdl:message>
+  <wsdl:message name="INilai_getNilaiByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNilaiByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="INilai_insertNilai_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertNilai" />
+  </wsdl:message>
+  <wsdl:message name="INilai_insertNilai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertNilaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="INilai_updateNilai_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateNilai" />
+  </wsdl:message>
+  <wsdl:message name="INilai_updateNilai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateNilaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="INilai_GantiPass_InputMessage">
+    <wsdl:part name="parameters" element="tns:GantiPass" />
+  </wsdl:message>
+  <wsdl:message name="INilai_GantiPass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GantiPassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INilai">
+    <wsdl:operation name="getNilai">
+      <wsdl:input wsaw:Action="http://tempuri.org/INilai/getNilai" message="tns:INilai_getNilai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INilai/getNilaiResponse" message="tns:INilai_getNilai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNilaiByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/INilai/getNilaiByID" message="tns:INilai_getNilaiByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INilai/getNilaiByIDResponse" message="tns:INilai_getNilaiByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertNilai">
+      <wsdl:input wsaw:Action="http://tempuri.org/INilai/insertNilai" message="tns:INilai_insertNilai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INilai/insertNilaiResponse" message="tns:INilai_insertNilai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateNilai">
+      <wsdl:input wsaw:Action="http://tempuri.org/INilai/updateNilai" message="tns:INilai_updateNilai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INilai/updateNilaiResponse" message="tns:INilai_updateNilai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GantiPass">
+      <wsdl:input wsaw:Action="http://tempuri.org/INilai/GantiPass" message="tns:INilai_GantiPass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INilai/GantiPassResponse" message="tns:INilai_GantiPass_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INilai" type="tns:INilai">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getNilai">
+      <soap:operation soapAction="http://tempuri.org/INilai/getNilai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNilaiByID">
+      <soap:operation soapAction="http://tempuri.org/INilai/getNilaiByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertNilai">
+      <soap:operation soapAction="http://tempuri.org/INilai/insertNilai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateNilai">
+      <soap:operation soapAction="http://tempuri.org/INilai/updateNilai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GantiPass">
+      <soap:operation soapAction="http://tempuri.org/INilai/GantiPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Nilai">
+    <wsdl:port name="BasicHttpBinding_INilai" binding="tns:BasicHttpBinding_INilai">
+      <soap:address location="http://localhost:23109/Nilai.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
